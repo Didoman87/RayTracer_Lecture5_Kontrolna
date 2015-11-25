@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7BBB6D21-4D32-4CF8-A4E1-C38B80B0E391}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RayTracer</RootNamespace>
+    <AssemblyName>RayTracer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <FileAlignment>4096</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>4096</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>libs\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>libs\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPythonTest">
+      <HintPath>libs\IronPythonTest.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>libs\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>libs\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Core">
+      <HintPath>libs\Microsoft.Scripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Debugging">
+      <HintPath>libs\Microsoft.Scripting.Debugging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.ExtensionAttribute">
+      <HintPath>libs\Microsoft.Scripting.ExtensionAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartThreadPool">
+      <HintPath>libs\SmartThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accelerators\AccBruteForceTracer.cs" />
+    <Compile Include="Accelerators\Spatial.cs" />
+    <Compile Include="BRDFs\DiffuseBRDF.cs" />
+    <Compile Include="BRDFs\GlassBRDF.cs" />
+    <Compile Include="BRDFs\MirrorBRDF.cs" />
+    <Compile Include="BRDFs\PhongBRDF.cs" />
+    <Compile Include="Cameras\Pinhole.cs" />
+    <Compile Include="Core\BRDF.cs" />
+    <Compile Include="Core\Camera.cs" />
+    <Compile Include="Core\Display.cs" />
+    <Compile Include="Core\FrameBuffer.cs" />
+    <Compile Include="Core\GeomPrimitive.cs" />
+    <Compile Include="Core\GlobalSettings.cs" />
+    <Compile Include="Core\ImageBitmap.cs" />
+    <Compile Include="Core\IntersectionData.cs" />
+    <Compile Include="Core\Light.cs" />
+    <Compile Include="Core\LightSample.cs" />
+    <Compile Include="Core\PlugableInterfaces.cs" />
+    <Compile Include="Core\RandomContext.cs" />
+    <Compile Include="Core\Ray.cs" />
+    <Compile Include="Core\RayContext.cs" />
+    <Compile Include="Core\RenderObject.cs" />
+    <Compile Include="Core\Scene.cs" />
+    <Compile Include="Core\Shader.cs" />
+    <Compile Include="Core\SkyDome.cs" />
+    <Compile Include="Core\Texture.cs" />
+    <Compile Include="Lights\OmniLight.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Math\BoundingBox.cs" />
+    <Compile Include="Math\Color3.cs" />
+    <Compile Include="Math\MathUtils.cs" />
+    <Compile Include="Math\Matrix3.cs" />
+    <Compile Include="Math\QMC.cs" />
+    <Compile Include="Math\Vector3.cs" />
+    <Compile Include="Parsers\ISceneLoader.cs" />
+    <Compile Include="Parsers\SceneLoaderBase.cs" />
+    <Compile Include="Parsers\SceneLoaderPython.cs" />
+    <Compile Include="Primitives\Sphere.cs" />
+    <Compile Include="Primitives\Triangle.cs" />
+    <Compile Include="Primitives\TriangleMesh.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raytracer.cs" />
+    <Compile Include="Renderers\IntegratorDiffuse.cs" />
+    <Compile Include="Renderers\ImageSamplerBuckets.cs" />
+    <Compile Include="Renderers\IntegratorDirectLight.cs" />
+    <Compile Include="Renderers\IntegratorSpecular.cs" />
+    <Compile Include="Renderers\IntegratorMain.cs" />
+    <Compile Include="Renderers\PixelSamplers.cs" />
+    <Compile Include="Renderers\RendrerBase.cs" />
+    <Compile Include="Shaders\BRDFShader.cs" />
+    <Compile Include="Shaders\ConstantShader.cs" />
+    <Compile Include="Shaders\TextureShader.cs" />
+    <Compile Include="Textures\NewShader.cs" />
+    <Compile Include="Textures\TextureChecker.cs" />
+    <Compile Include="Textures\TextureImage.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+</Project>

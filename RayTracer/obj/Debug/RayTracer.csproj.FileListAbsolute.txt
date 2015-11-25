@@ -1,0 +1,34 @@
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\RayTracer.exe
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\RayTracer.pdb
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\IronPython.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\IronPython.Modules.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\IronPythonTest.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\Microsoft.Scripting.Core.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\Microsoft.Scripting.Debugging.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\Microsoft.Scripting.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\SmartThreadPool.dll
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\bin\Debug\SmartThreadPool.pdb
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\obj\Debug\RayTracer.csprojResolveAssemblyReference.cache
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\obj\Debug\RayTracer.MainForm.resources
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\obj\Debug\RayTracer.csproj.GenerateResource.Cache
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\obj\Debug\RayTracer.exe
+C:\Users\fmi\Desktop\RayTracer_Lecture5\RayTracer\obj\Debug\RayTracer.pdb
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\obj\Debug\RayTracer.exe
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\obj\Debug\RayTracer.pdb
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\RayTracer.exe
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\RayTracer.pdb
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\IronPython.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\IronPython.Modules.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\IronPythonTest.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\Microsoft.Scripting.Core.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\Microsoft.Scripting.Debugging.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\Microsoft.Scripting.ExtensionAttribute.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\SmartThreadPool.dll
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\bin\Debug\SmartThreadPool.pdb
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\obj\Debug\RayTracer.csprojResolveAssemblyReference.cache
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\obj\Debug\RayTracer.MainForm.resources
+C:\Users\Deyan\Desktop\Ray Traycing\RayTracer_Lecture5_Kontrolna\RayTracer\obj\Debug\RayTracer.csproj.GenerateResource.Cache

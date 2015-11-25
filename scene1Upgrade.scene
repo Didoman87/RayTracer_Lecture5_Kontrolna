@@ -1,0 +1,109 @@
+# -*- coding: latin-1 -*-
+from RayTracer.Core import *
+from RayTracer.Shaders import *
+from RayTracer.Math import *
+from RayTracer.Primitives import *
+from RayTracer.Cameras import *
+from RayTracer.Cameras import *
+from RayTracer.Textures import *
+from RayTracer.BRDFs import *
+from RayTracer.Lights import *
+
+
+#създаваме червен материал
+shader1 = ConstantShader()
+shader1.color = Color3(1, 0, 0)
+
+
+texture1 = TextureImage()
+texture1.loadImage(basePath+"\\checker.png")
+
+brdf1 = DiffuseBRDF()
+brdf1.filterTexture = texture1
+
+brdf5 = DiffuseBRDF()
+brdf5.filterColor = Color3(1, 0, 0)
+
+shader2 = BRDFShader()
+shader2.m_brdf = brdf1
+
+shader5 = BRDFShader()
+shader5.m_brdf = brdf5
+
+brdf2 = MirrorBRDF()
+brdf2.filterColor = Color3(0.7, 0.7, 0.7)
+
+brdf3 = GlassBRDF()
+brdf3.filterColor = Color3(0.7, 0.7, 0.7)
+brdf3.m_ior = 1.6
+
+shader4 = BRDFShader()
+shader4.m_brdf = brdf3
+
+shader3 = BRDFShader()
+shader3.m_brdf = brdf2
+
+#създаваме сфера
+sphere1 = Sphere()
+sphere1.center = Vector3(-5, 5, 0)
+sphere1.radius = 2
+sphere1.shader = shader5
+scene.addPrimitive(sphere1)
+
+sphere2 = Sphere()
+sphere2.center = Vector3(0, 0, 0)
+sphere2.radius = 2
+sphere2.shader = shader4
+scene.addPrimitive(sphere2)
+
+sphere3 = Sphere()
+sphere3.center = Vector3(5, -5, 0)
+sphere3.radius = 2
+sphere3.shader = shader3
+scene.addPrimitive(sphere3)
+
+#създаваме триъгълник
+triangle1 = Triangle()
+triangle1.v[0] = Vector3(-8.000000, -8.000000, 0.000000)
+triangle1.v[1] = Vector3(-8.000000, 8.000000, 0.000000)
+triangle1.v[2] = Vector3(8.000000, 8.000000, 0.000000 )
+
+triangle1.tc[0] = Vector3(0, 0, 0)
+triangle1.tc[1] = Vector3(1, 0, 0)
+triangle1.tc[2] = Vector3(1, 1, 0)
+#прилагаме материал shader2 върху триъгълника
+triangle1.shader = shader2
+#добавяме триъгълника в сцената
+scene.addPrimitive(triangle1)
+
+#създаваме триъгълник
+triangle2 = Triangle()
+triangle2.v[0] = Vector3(8.000000, 8.000000, 0.000000)
+triangle2.v[1] = Vector3(8.000000, -8.000000, 0.000000)
+triangle2.v[2] = Vector3(-8.000000, -8.000000, 0.000000 )
+
+triangle2.tc[0] = Vector3(0, 0, 0)
+triangle2.tc[1] = Vector3(1, 0, 0)
+triangle2.tc[2] = Vector3(1, 1, 0)
+#прилагаме материал shader2 върху триъгълника
+triangle2.shader = shader2
+#добавяме триъгълника в сцената
+scene.addPrimitive(triangle2)
+
+
+#point light Lamp
+omni5 = OmniLight()
+omni5.pos = Vector3(0, 0, -10)
+omni5.color = Color3(1.0, 1.0, 1.0)
+omni5.power = 10000.0
+scene.addLight( omni5 )
+
+#създаваме камера
+camera1 		= Pinhole()
+camera1.right 	= Vector3(1, 0, 0)
+camera1.up 		= Vector3(0, 1, 0)
+camera1.forward = Vector3(0, 0, -1)
+camera1.pos 	= Vector3(0, 0, -20)
+#добавяме камерата в сцената
+scene.setCamera( camera1 )
+

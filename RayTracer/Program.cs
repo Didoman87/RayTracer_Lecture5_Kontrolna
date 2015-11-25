@@ -1,0 +1,28 @@
+﻿/************************************************************
+	Copyright (C) 2006-2013 by Hristo Lesev
+	hristo.lesev@diadraw.com
+	for educational purposes only, not for commercial use
+************************************************************/
+using System;
+using System.Windows.Forms;
+
+namespace RayTracer
+{
+	/// <summary>
+	/// Class with program entry point.
+	/// </summary>
+	internal sealed class Program
+	{
+		/// <summary>
+		/// Program entry point.
+		/// </summary>
+		[STAThread]
+		private static void Main(string[] args)
+		{
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new MainForm());
+		}
+		
+	}
+}

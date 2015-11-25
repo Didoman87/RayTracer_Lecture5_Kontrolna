@@ -1,0 +1,43 @@
+# -*- coding: latin-1 -*-
+from RayTracer.Core import *
+from RayTracer.Shaders import *
+from RayTracer.Math import *
+from RayTracer.Primitives import *
+from RayTracer.Cameras import *
+
+#създаваме червен материал
+shader1 = ConstantShader()
+shader1.color = Color3(1, 0, 0)
+
+#създаваме зелен материал
+shader2 = ConstantShader()
+shader2.color = Color3(0, 1, 0)
+
+#създаваме сфера
+sphere1 = Sphere()
+sphere1.center = Vector3(0, 0, 0)
+sphere1.radius = 2
+#прилагаме материал shader1 върху сферата
+sphere1.shader = shader1
+#добавяме сферата в сцената
+scene.addPrimitive(sphere1)
+
+#създаваме триъгълник
+triangle1 = Triangle()
+triangle1.v[0] = Vector3(0, 0, -3)
+triangle1.v[1] = Vector3(5, 0, -3)
+triangle1.v[2] = Vector3(5, 5, -3)
+#прилагаме материал shader2 върху триъгълника
+triangle1.shader = shader2
+#добавяме триъгълника в сцената
+scene.addPrimitive(triangle1)
+
+#създаваме камера
+camera1 		= Pinhole()
+camera1.right 	= Vector3(1, 0, 0)
+camera1.up 		= Vector3(0, 1, 0)
+camera1.forward = Vector3(0, 0, -1)
+camera1.pos 	= Vector3(0, 0, -20)
+#добавяме камерата в сцената
+scene.setCamera( camera1 )
+

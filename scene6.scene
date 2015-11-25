@@ -1,0 +1,84 @@
+# -*- coding: latin-1 -*-
+from RayTracer.Core import *
+from RayTracer.Shaders import *
+from RayTracer.Math import *
+from RayTracer.Primitives import *
+from RayTracer.Cameras import *
+from RayTracer.Cameras import *
+from RayTracer.Textures import *
+from RayTracer.BRDFs import *
+from RayTracer.Lights import *
+
+
+#създаваме червен материал
+shader1 = ConstantShader()
+shader1.color = Color3(1, 0, 0)
+
+texture1 = TextureImage()
+texture1.loadImage(basePath+"\\checker.png")
+
+brdf1 = DiffuseBRDF()
+brdf1.filterTexture = texture1
+
+brdf2 = GlassBRDF()
+brdf2.filterColor = Color3(0.7, 0.7, 0.7)
+brdf2.m_ior = 2.5
+
+shader2 = BRDFShader()
+shader2.m_brdf = brdf1
+
+shader3 = BRDFShader()
+shader3.m_brdf = brdf2
+
+#създаваме сфера
+sphere1 = Sphere()
+sphere1.center = Vector3(0, 0, 1)
+sphere1.radius = 1
+sphere1.shader = shader3
+#добавяме сферата в сцената
+scene.addPrimitive(sphere1)
+
+
+#създаваме триъгълник
+triangle1 = Triangle()
+triangle1.v[0] = Vector3(-8.000000, -8.000000, 0.000000)
+triangle1.v[1] = Vector3(8.000000, -8.000000, 0.000000)
+triangle1.v[2] = Vector3(8.000000, 8.000000, 0.000000 )
+
+triangle1.tc[0] = Vector3(0, 0, 0)
+triangle1.tc[1] = Vector3(1, 0, 0)
+triangle1.tc[2] = Vector3(1, 1, 0)
+#прилагаме материал shader2 върху триъгълника
+triangle1.shader = shader2
+#добавяме триъгълника в сцената
+scene.addPrimitive(triangle1)
+
+#създаваме триъгълник
+triangle2 = Triangle()
+triangle2.v[0] = Vector3(8.000000, 8.000000, 0.000000)
+triangle2.v[1] = Vector3(-8.000000, 8.000000, 0.000000)
+triangle2.v[2] = Vector3(-8.000000, -8.000000, 0.000000 )
+
+triangle2.tc[0] = Vector3(0, 0, 0)
+triangle2.tc[1] = Vector3(1, 0, 0)
+triangle2.tc[2] = Vector3(1, 1, 0)
+#прилагаме материал shader2 върху триъгълника
+triangle2.shader = shader2
+#добавяме триъгълника в сцената
+scene.addPrimitive(triangle2)
+
+#point light Lamp
+omni5 = OmniLight()
+omni5.pos = Vector3(4.076245307922363, 1.0054539442062378, 5.903861999511719)
+omni5.color = Color3(1.0, 1.0, 1.0)
+omni5.power = 10000.0
+scene.addLight( omni5 )
+
+#pinhole camera Camera
+camera6 = Pinhole()
+camera6.right = Vector3(0.6858805418014526, 0.7276337742805481, -0.010816780850291252)
+camera6.up = Vector3(-0.31737011671066284, 0.31246861815452576, 0.8953432440757751)
+camera6.forward = Vector3(0.6548618674278259, -0.6106656193733215, 0.4452453553676605)
+camera6.pos = Vector3(7.481131553649902, -6.5076398849487305, 5.34366512298584) + (Vector3(-0.6548618674278259, 0.6106656193733215, -0.4452453553676605)*5)
+scene.setCamera( camera6 )
+
